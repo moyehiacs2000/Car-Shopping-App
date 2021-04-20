@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CarProfileActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:elevation="0dp">
+
+    <com.google.android.material.appbar.CollapsingToolbarLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        app:contentScrim="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="@dimen/cardElevation"
+            app:cardCornerRadius="20dp"
+            android:layout_marginTop="-20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewpager"
+                    android:layout_width="0dp"
+                    android:layout_height="300dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:selectedDotColor="@color/colorPrimary"
+                    android:layout_marginBottom="40dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/viewpager"
+                    android:id="@+id/circleindecator"
+                    tools:ignore="MissingConstraints" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/transparent_diagonal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageview_home"/>
+
+                <Button
+                    android:id="@+id/btnBuy"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/ic_call_24"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/button_ui"
+                    android:ems="10"
+                    android:text="Call Seller"
+                    android:textAlignment="viewStart"
+                    android:drawablePadding="5dp"
+                    android:paddingLeft="@dimen/marginSize"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorwhite"
+                    android:textStyle="bold"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/circleindecator"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/BrandName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="2015 Land Rover"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/btnBuy" />
+
+                <TextView
+                    android:id="@+id/CarName"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:text="Range Rover Evoque\nPure Pluse"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="20dp"
+                    app:layout_constraintLeft_toLeftOf="@id/BrandName"
+                    app:layout_constraintTop_toBottomOf="@id/BrandName" />
+
+                <TextView
+                    android:id="@+id/Price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Price: 251$"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14dp"
+                    app:layout_constraintLeft_toLeftOf="@+id/CarName"
+                    app:layout_constraintTop_toBottomOf="@id/CarName" />
+                <ImageView
+                    android:id="@+id/suv"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/suv"
+                    app:layout_constraintLeft_toLeftOf="@+id/Price"
+                    app:layout_constraintTop_toBottomOf="@+id/Price" />
+
+                <TextView
+                    android:id="@+id/txtsuv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="SUV"
+                    android:textColor="@color/colorBlacktransParant"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/suv"
+                    app:layout_constraintLeft_toRightOf="@+id/suv"
+                    app:layout_constraintRight_toLeftOf="@+id/door"
+                    app:layout_constraintTop_toTopOf="@+id/suv" />
+
+                <ImageView
+                    android:id="@+id/door"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="90dp"
+                    android:src="@drawable/ic_doors_24"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtsuv"
+                    app:layout_constraintLeft_toRightOf="@+id/txtsuv"
+                    app:layout_constraintTop_toTopOf="@+id/txtsuv" />
+
+                <TextView
+                    android:id="@+id/txtdoor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="5 Doors"
+                    android:textColor="@color/colorBlacktransParant"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/door"
+                    app:layout_constraintLeft_toRightOf="@+id/door"
+                    app:layout_constraintTop_toTopOf="@+id/door" />
+
+                <ImageView
+                    android:id="@+id/L"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/ic_l_24"
+                    app:layout_constraintLeft_toLeftOf="@+id/Seats"
+                    app:layout_constraintTop_toBottomOf="@+id/Seats" />
+
+                <TextView
+                    android:id="@+id/txtL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="1.5 L"
+                    android:textColor="@color/colorBlacktransParant"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/L"
+                    app:layout_constraintLeft_toRightOf="@+id/L"
+                    app:layout_constraintTop_toTopOf="@+id/L" />
+
+                <ImageView
+                    android:id="@+id/Petrol"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_petrol_24"
+                    app:layout_constraintBottom_toBottomOf="@+id/L"
+                    app:layout_constraintLeft_toLeftOf="@+id/Full"
+                    app:layout_constraintTop_toTopOf="@+id/L" />
+
+                <TextView
+                    android:id="@+id/txtPetrol"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Petrol"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/colorBlacktransParant"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/Petrol"
+                    app:layout_constraintLeft_toRightOf="@+id/Petrol"
+                    app:layout_constraintTop_toTopOf="@+id/Petrol" />
+
+                <ImageView
+                    android:id="@+id/Seats"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/ic_seats_24"
+                    app:layout_constraintLeft_toLeftOf="@+id/suv"
+                    app:layout_constraintTop_toBottomOf="@+id/suv" />
+
+                <TextView
+                    android:id="@+id/txtSeats"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="5 Seats"
+                    android:textColor="@color/colorBlacktransParant"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/Seats"
+                    app:layout_constraintLeft_toRightOf="@+id/Seats"
+                    app:layout_constraintTop_toTopOf="@+id/Seats" />
+
+                <ImageView
+                    android:id="@+id/Full"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_full_24"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtSeats"
+                    app:layout_constraintLeft_toLeftOf="@+id/door"
+                    app:layout_constraintTop_toTopOf="@+id/txtSeats" />
+
+                <TextView
+                    android:id="@+id/txtfull"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Full manufacturer warranty"
+                    android:textColor="@color/colorBlacktransParant"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/Full"
+                    app:layout_constraintLeft_toRightOf="@+id/Full"
+                    app:layout_constraintTop_toTopOf="@+id/Full" />
+
+                <ImageView
+                    android:id="@+id/automatic"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/automatic"
+                    app:layout_constraintLeft_toLeftOf="@+id/L"
+                    app:layout_constraintTop_toBottomOf="@+id/L" />
+
+                <TextView
+                    android:id="@+id/txtautomatic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Automatic"
+                    android:textColor="@color/colorBlacktransParant"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/automatic"
+                    app:layout_constraintLeft_toRightOf="@+id/automatic"
+                    app:layout_constraintTop_toTopOf="@+id/automatic" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                layout="@layout/view_home"
+                tools:layout_editor_absoluteX="-16dp"
+                tools:layout_editor_absoluteY="-313dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

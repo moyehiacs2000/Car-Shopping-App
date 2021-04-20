@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/Desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Description"
+                android:textColor="@color/colorBlack"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/partDesc"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:text="The new Audi Q3. Style. Agility. Intelligence. The Q3 handles modern life beautifully. , The Edition 1 trim offers sport suspension, 20” ’5-twin-spoke Rotor’ design Audi Sport alloy wheels, matrix LED headlights with dynamic front and rear indicators, Audi Virtual Cockpit Plus with MMI touch…"
+                android:textSize="14dp"
+                app:layout_constraintLeft_toLeftOf="@+id/Desc"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Desc" />
+
+            <TextView
+                android:id="@+id/reviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Audi Q3 SUV (2018 - ) reviews"
+                android:textColor="@color/colorBlack"
+                android:textSize="18dp"
+                app:layout_constraintLeft_toLeftOf="@+id/partDesc"
+                app:layout_constraintTop_toBottomOf="@+id/partDesc" />
+
+            <TextView
+                android:id="@+id/byBuyers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="By Buyers"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintLeft_toLeftOf="@+id/reviews"
+                app:layout_constraintTop_toBottomOf="@+id/reviews" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/appCompatRatingBar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:rating="4"
+                app:layout_constraintBottom_toBottomOf="@+id/byBuyers"
+                app:layout_constraintLeft_toRightOf="@+id/byBuyers"
+                app:layout_constraintTop_toTopOf="@+id/byBuyers" />
+
+            <TextView
+                android:id="@+id/rev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="(7 reviews)"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintBottom_toBottomOf="@+id/appCompatRatingBar"
+                app:layout_constraintLeft_toRightOf="@+id/appCompatRatingBar"
+                app:layout_constraintTop_toTopOf="@+id/appCompatRatingBar" />
+            <TextView
+                android:id="@+id/ViewSimilar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View Similar"
+                android:textSize="18dp"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintTop_toBottomOf="@+id/byBuyers"
+                app:layout_constraintLeft_toLeftOf="@+id/byBuyers"
+                android:layout_marginTop="20dp"
+                />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_popular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marginSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ViewSimilar" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

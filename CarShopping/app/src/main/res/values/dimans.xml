@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--marginSize-->
+    <dimen name="marginContent">24dp</dimen>
+    <dimen name="marginSize">16dp</dimen>
+    <dimen name="margin8dp">8dp</dimen>
+    <dimen name="margin4dp">4dp</dimen>
+
+    <!--stroke width-->
+    <dimen name="strokeWidth">1.5dp</dimen>
+
+    <!--textSize-->
+    <dimen name="h1RobotoLight">96sp</dimen> <!--Sentence-->
+    <dimen name="h2RobotoLight">60sp</dimen> <!--Sentence-->
+    <dimen name="h3RobotoRegular">48sp</dimen> <!--Sentence-->
+    <dimen name="h4RobotoRegular">34sp</dimen> <!--Sentence-->
+    <dimen name="h5RobotoRegular">24sp</dimen> <!--Sentence-->
+    <dimen name="h6RobotoMedium">20sp</dimen> <!--Sentence-->
+    <dimen name="subtitle1RobotoRegular">16sp</dimen> <!--Sentence-->
+    <dimen name="subtitle2RobotoMedium">14sp</dimen> <!--Sentence-->
+    <dimen name="body1RobotoRegular">16sp</dimen> <!--Sentence-->
+    <dimen name="body2RobotoRegular">14sp</dimen> <!--Sentence-->
+    <dimen name="buttonRobotoMedium">14sp</dimen> <!--AllCaps-->
+    <dimen name="captionRobotoRegular">12sp</dimen> <!--Sentence-->
+    <dimen name="overlineRobotoRegular">10sp</dimen> <!--AllCaps-->
+
+    <!--cardView-->
+    <dimen name="cardElevation">3dp</dimen>
+    <dimen name="cardCornerRadius">10dp</dimen>
+</resources>
