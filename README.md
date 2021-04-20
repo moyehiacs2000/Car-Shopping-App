@@ -1,6 +1,7 @@
 # Car-Shopping-App
 
- An Android application used to search, save favorites,recommend, and buy cars.
+ An Android application used to search, save favorites,recommend, and buy cars :car:
+:red_car:.
 
 #Tools Used 
 ------------------------------------
