@@ -14,7 +14,6 @@
             android:layout_width="300dp"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/bg_started"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

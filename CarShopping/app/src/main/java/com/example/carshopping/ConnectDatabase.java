@@ -20,7 +20,7 @@ public class ConnectDatabase {
 
         try{
             Class.forName(Classes);
-            connection= DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.5;databaseName=CarShopping;user=moyehiacs;password=01144831131;");
+            connection= DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.3;databaseName=CarShopping;user=moyehiacs;password=01144831131;");
         }
         catch (ClassNotFoundException e){
             e.printStackTrace();

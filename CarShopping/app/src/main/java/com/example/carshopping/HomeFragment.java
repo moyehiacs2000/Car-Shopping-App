@@ -16,7 +16,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -27,10 +26,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
-    RecyclerView rvArticles;
-    AdabterArticles mAdapter;
+    RecyclerView rvBrands;
+    AdabterBrands mAdapter;
     RadioButton radiobutton_Search;
-    private ProgressDialog progressDialog;
     String UserID;
     public HomeFragment( RadioButton radiobutton_Search,String UserID) {
         // Required empty public constructor
@@ -43,13 +41,10 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
          View v=inflater.inflate(R.layout.fragment_home, container, false);
-        rvArticles=v.findViewById(R.id.rvArticles);
-        rvArticles.setHasFixedSize(true);
-        progressDialog = ProgressDialog.show(getContext()
-                ,"Please Wait","Sending mail....",true,false);
+        rvBrands=v.findViewById(R.id.rvBrands);
+        rvBrands.setHasFixedSize(true);
         final RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
-        rvArticles.setLayoutManager(layoutManager);
-        ArrayList<brands> dataArticles=new ArrayList<brands>();
+        rvBrands.setLayoutManager(layoutManager);
         ConnectDatabase dp=new ConnectDatabase();
         ArrayList<brands> BrandList=new ArrayList<brands>();
         String selectQuery="select * from Brands";
@@ -73,27 +68,27 @@ public class HomeFragment extends Fragment {
         else{
             Toast.makeText(getActivity(),"error",Toast.LENGTH_LONG).show();
         }
-        mAdapter=new AdabterArticles(BrandList,getActivity(),radiobutton_Search,UserID);
-        rvArticles.setAdapter(mAdapter);
-        rvArticles.setPadding(30,20,30,40);
+        mAdapter=new AdabterBrands(BrandList,getActivity(),radiobutton_Search,UserID);
+        rvBrands.setAdapter(mAdapter);
+        rvBrands.setPadding(30,20,30,40);
 
         final SnapHelper snapHelper=new LinearSnapHelper() ;
-        snapHelper.attachToRecyclerView(rvArticles);
+        snapHelper.attachToRecyclerView(rvBrands);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                RecyclerView.ViewHolder viewHolder=rvArticles.findViewHolderForAdapterPosition(0);
+                RecyclerView.ViewHolder viewHolder=rvBrands.findViewHolderForAdapterPosition(0);
                 RelativeLayout rl1=viewHolder.itemView.findViewById(R.id.rl1);
                 rl1.animate().scaleY(1).scaleX(1).setDuration(350).setInterpolator(new AccelerateInterpolator()).start();
             }
         },100);
-        rvArticles.addOnScrollListener(new RecyclerView.OnScrollListener() {
+        rvBrands.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
                 View v=snapHelper.findSnapView(layoutManager);
                 int pos=layoutManager.getPosition(v);
-                RecyclerView.ViewHolder viewHolder =rvArticles.findViewHolderForAdapterPosition(pos);
+                RecyclerView.ViewHolder viewHolder =rvBrands.findViewHolderForAdapterPosition(pos);
                 RelativeLayout rl1=viewHolder.itemView.findViewById(R.id.rl1);
                 if(newState==RecyclerView.SCROLL_STATE_IDLE){
                     rl1.animate().setDuration(350).scaleX(1).scaleY(1).setInterpolator(new AccelerateInterpolator()).start();
@@ -109,7 +104,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        progressDialog.dismiss();
         return v;
     }
 }

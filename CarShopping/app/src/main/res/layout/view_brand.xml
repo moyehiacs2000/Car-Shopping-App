@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:id="@+id/imgArticle"
+                    android:id="@+id/imgBrand"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
@@ -34,7 +34,7 @@
                     android:layout_height="100dp"
                     android:layout_marginBottom="-10dp"
                     android:background="@drawable/bg_shadow"
-                    android:layout_alignBottom="@+id/imgArticle"/>
+                    android:layout_alignBottom="@+id/imgBrand"/>
 
                 <TextView
                     android:id="@+id/tvTitle"
